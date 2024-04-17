@@ -1,14 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Prueba Holding VML</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/index.css'>
     <script src='../back/index.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='../bootstrap-5.3.3-dist/css/bootstrap.css'>
+    <script src='../bootstrap-5.3.3-dist/js/bootstrap.js'></script>
 </head>
+
 <body>
-    
+    <div class="container title">
+        <h2>TABLA DE TAREAS</h2>
+        <table id="tablaTareas" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TAREA</th>
+                    <th>ESTADO</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>En Desarrollo</td>
+                    <td>En Progreso</td>
+                    <td>
+                        <!-- Botón de Bootstrap -->
+                        <button type="button" class="btn btn-primary">Editar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Base de datos</td>
+                    <td>Terminado</td>
+                    <td>
+                        <!-- Botón de Bootstrap -->
+                        <button type="button" class="btn btn-primary">Editar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="btnInsertarTarea" type="button" class="btn btn-primary">Insertar Tarea</button>
+    </div>
+
+    <script>
+        document.getElementById('btnInsertarTarea').addEventListener('click', function() {
+
+            var idInput = prompt('Ingrese el ID de la nueva tarea:');
+            var tareaInput = prompt('Ingrese la descripción de la nueva tarea:');
+            var estadoInput = prompt('Ingrese el estado de la nueva tarea:');
+
+
+            var nuevaFila = document.createElement('tr');
+            nuevaFila.innerHTML = `
+                <td>${idInput}</td>
+                <td>${tareaInput}</td>
+                <td>${estadoInput}</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </td>
+            `;
+
+
+            document.getElementById('tablaTareas').getElementsByTagName('tbody')[0].appendChild(nuevaFila);
+        });
+    </script>
 </body>
+
 </html>
+
