@@ -13,67 +13,10 @@
 </head>
 
 <body>
-    <div class="container title">
-        <h2>TABLA DE TAREAS</h2>
-        <table id="tablaTareas" class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>TAREA</th>
-                    <th>ESTADO</th>
-                    <th>ACCIONES</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>En Desarrollo</td>
-                    <td>En Progreso</td>
-                    <td>
-                        <!-- Botón de Bootstrap -->
-                        <button type="button" class="btn btn-primary">Editar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Base de datos</td>
-                    <td>Terminado</td>
-                    <td>
-                        <!-- Botón de Bootstrap -->
-                        <button type="button" class="btn btn-primary">Editar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <button id="btnInsertarTarea" type="button" class="btn btn-primary">Insertar Tarea</button>
+    <div class="container">
+        <h2>Sistema de tareas</h2>
+        <button onclick="irAListaTareas();" class="btn btn-primary">Ver tareas</button>
     </div>
-
-    <script>
-        document.getElementById('btnInsertarTarea').addEventListener('click', function() {
-
-            var idInput = prompt('Ingrese el ID de la nueva tarea:');
-            var tareaInput = prompt('Ingrese la descripción de la nueva tarea:');
-            var estadoInput = prompt('Ingrese el estado de la nueva tarea:');
-
-
-            var nuevaFila = document.createElement('tr');
-            nuevaFila.innerHTML = `
-                <td>${idInput}</td>
-                <td>${tareaInput}</td>
-                <td>${estadoInput}</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Editar</button>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                </td>
-            `;
-
-
-            document.getElementById('tablaTareas').getElementsByTagName('tbody')[0].appendChild(nuevaFila);
-        });
-    </script>
 </body>
 
 </html>
-
