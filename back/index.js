@@ -37,6 +37,11 @@ function insertarTarea() {
 
 }
 
+function verTareas() {
+    window.location.href = "./listaTareas.html";
+    irAListaTareas();
+}
+
 function irAListaTareas() {
     //Validación para no cargar información de tareas
     if (!window.location.href.toString().includes("/listaTareas.html")) {
