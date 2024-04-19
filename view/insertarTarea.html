@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Prueba Holding VML</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/index.css'>
+    <script src='../back/index.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='../bootstrap-5.3.3-dist/css/bootstrap.css'>
+    <script src='../bootstrap-5.3.3-dist/js/bootstrap.js'></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Insertar tarea</h2>
+        <form id="formInsertarTarea">
+            <div class="form-group col-lg-3 col-md-2 col-sm-6">
+                <label for="nombreTarea">Nombre tarea</label>
+                <input type="text" class="form-control" id="nombreTarea" maxlength="150" placeholder="Máx. 150 caracteres">
+            </div>
+            <br/>
+            <div class="form-group col-lg-3 col-md-2 col-sm-6">
+                <label for="estado">Estado</label>
+                <select class="form-control" id="estado">
+                    <option value="Seleccione" selected>Seleccione</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Ejecutada">En curso</option>
+                    <option value="Ejecutada">En revisión</option>
+                    <option value="Descartada">Descartada</option>
+                    <option value="Completada">Completada</option>
+                </select>
+            </div>
+            <br/>
+            <div class="form-group col-lg-1 col-md-2 col-sm-6" style="display: grid;">
+                <button id="guardar" onclick="insertarTarea();" type="submit" class="btn btn-primary">Guardar</button>
+                <button id="guardar" onclick="regresarAListaTareas();" type="button" class="btn btn-success">Volver</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
